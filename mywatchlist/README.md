@@ -1,4 +1,5 @@
 **Jelaskan perbedaan antara JSON, XML, dan HTML!**
+
 JSON (JavaScript Object Notation) merupakan format yang digunakan untuk menyimpan, membaca, dan menukar data agar bisa dibaca oleh user. Format dari file JSON adalah .json. JSON tidak mempunyai tag yang tidak terpakai sehingga, jika dibandingkan JSON lebih sederhana dan cepat dibandingkan dengan XML. 
 XML (Extensive Markup Language) adalah suatu markup language yang dibuat untuk menyimpan dan mebawa serta mengantarkan data. Sebenarnya XML memiliki fungsi yang mirip akan tetapi JSON dan XML sangat berbeda. format file dari XML diakhiri dengan .xml. Perbedaan yang sangat jelas adalah XML lebih rumit karena memerlukan ukuran file yang besar. JSON biasanya digunakan untuk mengirim data dengan menguraikan data tersebut terlebih dahulu,  lalu kemudian dikirim ke internet. Sedangkan XML mempunyai data yang lebih terstruktur. HTML (Hypertext Markup Language) adalah suatu bahasa markup standar yang digunakan untuk membuat serta  menyusun halaman dan aplikasi web.
 
