@@ -1,0 +1,121 @@
+[
+    {
+        "model":"mywatchlist.Item_MyWatchList",
+        "pk":1,
+        "fields":{
+            "watched":"watched",
+            "title":"The Conjuring",
+            "rating": 8,
+            "release_date":"26/06/2013",
+            "review": "A sense of dread permeates The Conjuring from the start, and it’s delightful."
+        }
+},
+{
+        "model":"mywatchlist.Item_MyWatchList",
+        "pk":2,
+        "fields":{
+            "watched":"watched",
+            "title":"The Conjuring 2",
+            "rating": 7,
+            "release_date":"10/06/2016",
+            "review": "This sequel might lack the delightful jolts of its predecessor."
+        }
+    },
+    {
+        "model":"mywatchlist.Item_MyWatchList",
+        "pk":3,
+        "fields":{
+            "watched":"watched",
+            "title":"Midsommar",
+            "rating": 7,
+            "release_date":"07/09/2019",
+            "review": "More unsettling than frightening, it's still a trip worth taking."
+        }
+    },
+    {
+        "model":"mywatchlist.Item_MyWatchList",
+        "pk":4,
+        "fields":{
+            "watched":"watched",
+            "title":"Hereditary",
+            "rating": 7,
+            "release_date":"27/06/2018",
+            "review": "Hereditary is a hell of an intense ride."
+        }
+    },
+    {
+        "model":"mywatchlist.Item_MyWatchList",
+        "pk":5,
+        "fields":{
+            "watched":"not watched",
+            "title":"It Follows",
+            "rating": 7,
+            "release_date":"27/03/2015",
+            "review": "Its thematic textures run deep, but the picture retains real visceral force."
+        }
+    },
+    {
+        "model":"mywatchlist.Item_MyWatchList",
+        "pk":6,
+        "fields":{
+            "watched":"watched",
+            "title":"A Quiet Place",
+            "rating": 7,
+            "release_date":"03/04/2018",
+            "review": "A terrifying thriller with a surprisingly warm heart."
+        }
+    },
+    {
+        "model":"mywatchlist.Item_MyWatchList",
+        "pk":7,
+        "fields":{
+            "watched":"watched",
+            "title":"Get Out",
+            "rating": 8,
+            "release_date":"29/03/2017",
+            "review": "the violence is deeply satisfying, the twists delightful."
+        }
+    },
+    {
+        "model":"mywatchlist.Item_MyWatchList",
+        "pk":8,
+        "fields":{
+            "watched":"watched",
+            "title":"Orphan",
+            "rating": 7,
+            "release_date":"21/07/2009",
+            "review": "It's a cut above most spooky-kid movies, with a twist that sets it apart."
+        }
+    },
+    {
+        "model":"mywatchlist.Item_MyWatchList",
+        "pk":9,
+        "fields":{
+            "watched":"not watched",
+            "title":"Watcher",
+            "rating": 6,
+            "release_date":"03/06/2022",
+            "review": "Watcher flourishes as it complicates its premise beyond the unknowable and faceless desires of a shadowy silhouette."
+        }
+    },
+    {
+        "model":"mywatchlist.Item_MyWatchList",
+        "pk":10,
+        "fields":{
+            "watched":"watched",
+            "title":"Mother!",
+            "rating": 7,
+            "release_date":"15/09/2017",
+            "review": "Yes, it is pretentious. But pretension is also about ambition and this is cinema that is willing to kick out the lights."
+        }
+    }
+
+
+
+
+
+
+
+
+
+]
