@@ -20,11 +20,11 @@ def show_todolist(request):
     user_id = request.user.id
     data_of_todolist = Item_todolist.objects.filter(user_id=user_id)
     context = {
-        'username': 'username',
+        'username': username,
         'todolist' : data_of_todolist,
         
         }
-    return render(request, "todolist.html",context)
+    return render(request, "my_todolist.html",context)
 
 
 def my_todolist(request):
@@ -32,12 +32,17 @@ def my_todolist(request):
         title = request.POST.get('title')
         description = request.POST.get('description')
         date = datetime.datetime.now()  
-
         is_finished = False
-        Task.objects.create(title=title, description=description, date=date, user=request.user, is_finished=is_finished)
+        Item_todolist.objects.create(title=title, description=description, date=date, user=request.user)
         response = HttpResponseRedirect(reverse('todolist:show_todolist'))
         return response
-    return render(request, "my_todolist.html")
+    return render(request, "todolist.html")
+
+@login_required(login_url='/todolist/login/')
+def delete_task(request, id):
+    data = Item_todolist.objects.get(id=id)
+    data.delete()
+    return HttpResponseRedirect(reverse('todolist:show_todolist'))
 
 
 def register(request):
@@ -73,4 +78,6 @@ def logout_user(request):
     response = HttpResponseRedirect(reverse('todolist:login'))
     response.delete_cookie('last_login')
     return response
+
+
 

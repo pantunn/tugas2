@@ -2,7 +2,7 @@
 
 {% block content %}
 <body>
-<h1 style="text-align: center ">{{user.username}}'s To do list {{user.username}}</h1>
+<h1 style="text-align: center ">{{user.username}}'s To do list</h1>
 
 <style>
     table, th{
@@ -27,33 +27,24 @@
       <th colspan="2">Tanggal</th>
       <th colspan="2">Judul</th>
       <th colspan="3">Deskripsi</th>
-      <th colspan="2">Status</th>
-      <th colspan="2" >Pilihan</th>
+      <th colspan="2" >Hapus</th>
     </tr>
   </thread>
     {% comment %} Tambahkan data di bawah baris ini {% endcomment %}
     {% for task in todolist %}
-    <tr style="background-color: rgb(128, 172, 189);" >
+
         <td colspan="2">{{task.date}}</td>
         <td colspan="2">{{task.title}}</td>
         <td colspan="3">{{task.description}}</td>
         <td colspan="2">
-          {% if task.is_finished %}
-              Done
-              {% else %}
-              Not Yet
-              {% endif %}
-        </td>
-        <td colspan="2">
           <button><a href="delete_task/{{task.pk}}">Delete</a></button>
-          <button><a href="status/{{task.pk}}">Status</a></button>
         </td>
     </tr>
 {% endfor %}
 </table>
 <div class="button">
   <button ><a href="{% url 'todolist:logout' %}">Logout</a></button>
-  <button><a href="{% url 'todolist:show_todolist' %}">Add Todo</a></button>  
+  <button><a href="{% url 'todolist:my_todolist' %}">Add Todo</a></button>  
 </div>
 
 </body>

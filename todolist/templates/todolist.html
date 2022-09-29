@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <div style="text-align: center"class = "add">
     
-    <h1 style=> Hi {{user.username}} Add New Todo List &#128195 </h1>
+    <h1 style=> Hi {{user.username}}! Add your new todo list &#128195 </h1>
 
     <form method="POST" action="">
         {% csrf_token %}
@@ -18,7 +18,7 @@
         </div>
         <div>
             <label for="description">Description: </label>
-            <input id="description" type="text" style="height:50px; width:200px" name="description" LeftTop 150x75 px placeholder="Describe your task" required>
+            <input id="description" type="text" style="height:50px; width:200px" name="description" LeftTop 150x75 px placeholder="Description" required>
         </div>
         <br><br>
         <input class="button" type="submit" value="Add">
