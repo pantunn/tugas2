@@ -1,0 +1,34 @@
+[
+    {
+        "model": "todolist.Item_todolist",
+        "pk": 1,
+        "fields": {
+            "user": "Pantun",
+            "date": "28/09/2022",
+            "title": "Mengerjakan TP SDA",
+            "description": "Mengerjakan TP 02 SDA tentang rekursif"
+        }
+    },
+    {
+        "model": "todolist.Item_todolist",
+        "pk": 2,
+        "fields": {
+            "user": "Sophie",
+            "date": "29/09/2022",
+            "title": "Membersihkan rumah",
+            "description": "membersihkan rumah agar bersih"
+        }
+    },
+    {
+        "model": "todolist.Item_todolist",
+        "pk": 3,
+        "fields": {
+            "user": "Arsi",
+            "date": "30/09/2022",
+            "title": "mendaftar magang",
+            "description": "mencari dan mendaftar magang ke perusahaan"
+        }
+    }
+   
+
+]
