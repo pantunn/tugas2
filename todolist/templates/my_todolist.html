@@ -2,28 +2,116 @@
 
 {% block content %}
 <body>
-<h1 style="text-align: center ">{{user.username}}'s To do list</h1>
+<style>
+  body{background-color: rgb(180, 194, 179);}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <style>
+      body {
+        margin: 0;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+      ul {
+        list-style-type: none;
+        overflow: hidden;
+        background-color: rgb(193, 167, 147);
+        padding: 14px 16px;
+        text-align: left;
+        font-weight: bold;
+        font-size: medium;
+        font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          
+      }
+      li {
+        display: inline;
+      }
+      li a {
+      text-decoration: none;
+      }
+      .btn{
+        color: beige;
+        border-radius: 10px;
+        background-color: rgb(130, 133, 180);
+        font-size: small;
+        padding: 7px 12px;
+        box-shadow: 0 0 10px rgb(137, 110, 110);
+      }
 
+      </style>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <span class="navbar-brand" href="#"> &#128195 Welcome, {{user.username}}</span>
+          <a style="float: right;" href="{% url 'todolist:logout' %}" class="btn">logout</a>
+        </li>
+      </ul>
+  </div>
+</nav>
+<h1 style="text-align: center; color: rgb(172, 103, 103);"> {{user.username}}'s Todo list</h1>
 <style>
     table, th{
       text-align: center;
-      border: 1px solid rgb(255, 255, 255);
+      border: 1px solid rgb(235, 204, 204);
       border-collapse: collapse;
     }
     td{
       text-align: center;
-      border: 1px solid rgb(255, 255, 255);
-      border-collapse: collapse;
+      border: 1px solid rgb(217, 181, 181);
+      border-collapse:collapse;
+      font-size: small
+      
     }
     .button{
       text-align: center;
       margin-top: 10px;
     }
+    .container{
+      display:flex;
+      font-size: small;
+      justify-content:center;
+      padding: 20px;
+      display: grid;
+
+    }
+    .card{
+      background: rgb(245, 236, 220);
+      width: 140px;
+      height: 150px;
+      margin: 8px;
+      border-radius: 10px;
+      padding: 20px 20px;
+      background-color: rgb(99, 161, 140);
+      
+    }
+
+    .card-title{
+      font-size: medium;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(105, 62, 46);
+     
+    }
+
+
+    .btndell{
+      color: rgb(236, 248, 247);
+      background-color: rgb(159, 112, 121);
+      font-size: small;
+      padding: 1px 8px;
+
+    
+      
+    }
+
   </style>
 
 <table rules="all", border="10", table align="center">
   <thread>
-    <tr style="background-color: rgb(191, 175, 219);">
+    <tr style="background-color: rgb(189, 188, 167);">
       <th colspan="2">Tanggal</th>
       <th colspan="2">Judul</th>
       <th colspan="3">Deskripsi</th>
@@ -37,15 +125,39 @@
         <td colspan="2">{{task.title}}</td>
         <td colspan="3">{{task.description}}</td>
         <td colspan="2">
-          <button><a href="delete_task/{{task.pk}}">Delete</a></button>
+          <a href="delete_task/{{task.pk}}" class="btndell" >Delete</a>
         </td>
     </tr>
 {% endfor %}
 </table>
-<div class="button">
-  <button ><a href="{% url 'todolist:logout' %}">Logout</a></button>
-  <button><a href="{% url 'todolist:my_todolist' %}">Add Todo</a></button>  
-</div>
+
+ <div class="button">
+    <a href="{% url 'todolist:logout' %}"class="btn">Logout</a>
+    <a href="{% url 'todolist:my_todolist' %}" class="btn">Add Todo</a>
+  </div>
+
+  <div style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center;">
+
+    {% for card in todolist %}
+    <div class="card" style="width: 150px; margin: 5px; background-color: rgb(193, 167, 147);">
+      <img src="{{card.image}}" class="card-img-top" >
+      <div class="card-body">
+        <div style="display: flex; flex-direction: row;" >
+          <h1 class="card-title">{{card.title}}</h1>
+        </div>
+        <p class="card-text">{{card.description }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  
+  </div>
+
+
+
+
+
+
+</section>
 
 </body>
 

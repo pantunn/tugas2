@@ -6,6 +6,7 @@ from todolist.views import logout_user
 from todolist.views import my_todolist
 from todolist.views import delete_task
 
+
 app_name = 'todolist'
 
 urlpatterns = [
@@ -16,4 +17,6 @@ urlpatterns = [
     path('create-task/', my_todolist, name='my_todolist'),
     path('delete_task/<int:id>', delete_task, name='delete_task'),
 ]
+
+
 
