@@ -46,5 +46,5 @@ sistemnya hampir sama dengan ID selector, tetapi pada class selector  menggunaka
 **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas.**
 -melakukan kustomisasi pada tugas 4 menggunakan CSS framework
 -kustomisasi yang saya lakukan ada pada bagian login,register, todolist, dan my_todolist
--halaman website dibuat dengan responsive
+-halaman website dibuat dengan responsive.
 
