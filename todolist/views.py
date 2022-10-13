@@ -80,4 +80,20 @@ def logout_user(request):
     return response
 
 
+@login_required(login_url='/todolist/login/')
+def todolist_ajax(request):
+    username = request.user.username
+    user_id = request.user.id
+    data_of_todolist = Item_todolist.objects.filter(user_id=user_id)
+    context = {
+        'username': username,
+        'todolist' : data_of_todolist,
+        
+        }
+    return render(request, "my_todolist.html",context)
 
+@login_required(login_url='/todolist/login/')
+def task_delete(request, id):
+    data_task = Task.objects.get(id=id)
+    data_task.delete()
+    return HttpResponseRedirect(reverse('todolist:show_todolist'))
