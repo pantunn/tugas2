@@ -10,6 +10,10 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from todolist.models import Item_todolist
+from django.http import HttpResponse
+from django.http import HttpResponseNotFound
+from django.core import serializers
+from .forms import Item_todolist
 
 
 
@@ -81,28 +85,20 @@ def logout_user(request):
 
 @login_required(login_url='/todolist/login/')
 def todolist_json(request):
-    data_task = Task.objects.all().filter(usernames=request.user)
-    return HttpResponse(serializers.serialize('json', data_task), content_type="application/json")
+    data_task = Item_todolist.objects.all()
+    return HttpResponse(serializers.serialize('json', data_task))
 
 @login_required(login_url='/todolist/login/')
 def todolist_ajax(request):
+    form = Item_todolist()
     if request.method == 'POST':
-        title = request.POST.get("title")
-        description = request.POST.get("description")
+        title = request.POST["title"]
+        description = request.POST["description"]
 
-        task = Task.objects.create(title=title, description=description, date=datetime.date.today(), usernames=request)
+        task = Item_todolist(title=title, description=description, date=datetime.date.today(), user=request.user)
         task.save()
-        result={
-            'fields':{
-                'title':task.title,
-                'description': task.description,
-                'date': task.date,
-            },
-            'pk':task.pk
-        }
-        return HttpResponse(b"CREATED", status=200)
-    
-    return HttpResponseNotFound
+        
+    return HttpResponse(b"CREATED")
 
 @login_required(login_url='/todolist/login/')
 def task_delete(request, id):
